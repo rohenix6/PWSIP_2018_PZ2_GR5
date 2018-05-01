@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="doctorapp.jnlp">
+  <information>
+    <title>doctorapp</title>
+    <vendor>Rafal Kaczmarczyk</vendor>
+    <description>Doctor app</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="doctorapp.jar" size="753553" download="eager" />
+    <jar href="libs\mysql-connector-java-5.1.14-bin.jar" size="775688" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="0" height="0" main-class="application.Main"  name="Doctor app" />
+  <update check="background"/>
+</jnlp>
