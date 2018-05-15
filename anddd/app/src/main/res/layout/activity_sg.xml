@@ -15,6 +15,7 @@
         android:layout_width="289dp"
         android:layout_height="64dp"
         android:layout_centerInParent="true"
+        android:text="logowanie"
         />
 
 
@@ -24,14 +25,16 @@
         android:layout_height="64dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="159dp" />
+        android:layout_marginBottom="159dp"
+        android:text="Rejestracja"/>
 
     <Button
         android:id="@+id/button4"
         android:layout_width="310dp"
         android:layout_height="145dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:text="E-przychodnia"/>
 
 
 

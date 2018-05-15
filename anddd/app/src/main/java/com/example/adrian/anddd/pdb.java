@@ -7,46 +7,39 @@ import android.util.Log;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.sql.Statement;
 
-public class polaczenie
+
+public class pdb
 {
-    private final String dane ="jdbc:mysql://192.168.0.10:3306/and?useUnicode=yes&characterEncoding=utf-8";
-    private final String uzytkownik ="koot";
-    private final String haslo = "";
+   /* private static final String dane_bazy = "jdbc:mysql://192.168.43.104:3306/and?useUnicode=yes&characterEncoding=utf-8";
+    private static final String uzytkownik_bazy = "root";
+    private static final String haslo_bazy = "";
 
     @SuppressLint("NewApi")
-    public Connection CONN()
-
-
+    public Connection CONN ()
     {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
         Connection conn = null;
-        String ConnURL = null;
 
         try
         {
             Class.forName("com.mysql.jdbc.Driver");
 
-            conn = DriverManager.getConnection(dane, uzytkownik, haslo);
-            conn = DriverManager.getConnection(ConnURL);
+            conn = DriverManager.getConnection(dane_bazy, uzytkownik_bazy, haslo_bazy);
 
-        }catch (SQLException se)
-        {
-            Log.e("Erro", se.getMessage());
 
+
+        } catch (ClassNotFoundException e) {
+            Log.e("Erro", e.getMessage());
         }
-        catch (ClassNotFoundException xe)
-        {
-            Log.e("Erro", xe.getMessage());
+        catch (SQLException e) {
+            Log.e("Erro", e.getMessage());
         }
         catch (Exception e)
         {
             Log.e("Erro", e.getMessage());
         }
         return conn;
-    }
-
-
+    }*/
 }
