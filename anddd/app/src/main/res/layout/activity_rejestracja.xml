@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="match_parent"
-    tools:context=".sg"
     android:background="#ffffff"
-    android:padding="10dp"
     android:orientation="vertical"
+    android:padding="10dp"
+    tools:context=".sg">
 
-    >
 
 
     <TextView
@@ -25,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="40dp" />
+        android:layout_marginTop="5dp" />
 
     <TextView
         android:layout_width="match_parent"
@@ -40,7 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="100dp" />
+        android:layout_marginTop="45dp" />
 
     <TextView
         android:layout_width="match_parent"
@@ -54,8 +52,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="220dp" />
+        android:layout_below="@+id/nrlokaluform" />
 
     <TextView
         android:layout_width="match_parent"
@@ -66,11 +63,10 @@
 
     <EditText
         android:id="@+id/nrlokaluform"
-        android:layout_width="match_parent"
+        android:layout_width="401dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="350dp" />
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/miastoform" />
 
     <TextView
         android:layout_width="match_parent"
@@ -83,9 +79,8 @@
         android:id="@+id/hasloform"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginBottom="110dp"
+        android:layout_below="@+id/emailform"
         android:inputType="textPassword" />
 
     <TextView
@@ -99,9 +94,8 @@
         android:id="@+id/rehasloform"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginBottom="50dp"
+        android:layout_below="@+id/hasloform"
         android:inputType="textPassword" />
 
     <TextView
@@ -115,9 +109,8 @@
         android:id="@+id/peselform"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="290dp" />
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/adresform" />
 
     <TextView
         android:layout_width="match_parent"
@@ -130,9 +123,8 @@
         android:id="@+id/emailform"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="170dp" />
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/nrkontaktowyform" />
 
     <TextView
         android:layout_width="match_parent"
@@ -145,14 +137,13 @@
         android:id="@+id/nrkontaktowyform"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="230dp" />
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
         android:layout_alignTop="@+id/miastoform"
         android:text="Miasto" />
 
@@ -160,17 +151,27 @@
         android:id="@+id/miastoform"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="160dp" />
+        android:layout_marginTop="85dp" />
 
     <Button
         android:id="@+id/registryform"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="5dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="68dp"
         android:text="Zarejestruj" />
+
+    <ProgressBar
+        android:id="@+id/progressBarRejestracja"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="19dp" />
 
 
 

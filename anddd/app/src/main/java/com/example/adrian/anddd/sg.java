@@ -33,6 +33,7 @@ public class sg extends AppCompatActivity {
                 startActivity(i);
                 finish();
             }
+
         });
 
         irejestracja = findViewById(R.id.brejestracja);

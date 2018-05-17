@@ -38,9 +38,8 @@ public class logowanie extends AppCompatActivity {
         button = findViewById(R.id.bzalogujform);
         progressBar = findViewById(R.id.pprogress);
 
-        ip = "192.168.0.10";
-        db = "and";
-        DBUserNameStr = "koot";
+
+        DBUserNameStr = "";
         DBPassword = "";
 
         progressBar.setVisibility(View.GONE);
@@ -89,14 +88,7 @@ public class logowanie extends AppCompatActivity {
 
             String usernam = UserNamerStr;
             String passwordd = PasswordStr;
-            /*if(usernam==null)
-            {
-                Toast.makeText(logowanie.this, "Wpisz PESEL", Toast.LENGTH_LONG).show();
-            }
-            else if (passwordd==null)
-            {
-                Toast.makeText(logowanie.this, "Wpisz hasło", Toast.LENGTH_LONG).show();
-            }*/
+
             if (usernam.trim().equals("") || passwordd.trim().equals("")) {
                 ConnectionResult = "Wypelnij pola";
             } else {
@@ -119,7 +111,6 @@ public class logowanie extends AppCompatActivity {
                             Connect.close();
 
                             Intent i = new Intent(getApplicationContext(), Menu.class);
-                           // i.putExtra("Witam", UserNamerStr);
                             startActivity(i);
                             finish();
                         } else {
