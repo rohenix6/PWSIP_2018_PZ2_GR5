@@ -9,11 +9,12 @@
 
     <Spinner
         android:id="@+id/slistaSpecjalistow"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
+        android:layout_width="219dp"
+        android:layout_height="37dp"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="26dp"
+        android:layout_marginEnd="58dp"
+        android:layout_marginTop="33dp"
         android:background="@android:drawable/btn_dropdown"
         android:spinnerMode="dropdown" />
 
@@ -26,5 +27,16 @@
         android:layout_marginTop="95dp"
         android:background="@android:drawable/btn_dropdown"
         android:spinnerMode="dropdown" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="201dp"
+        android:text="Nazwa użytkownika"
+        android:id="@+id/ttwybor"/>
+
+
 
 </RelativeLayout>

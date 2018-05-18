@@ -1,3 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
 <resources>
     <string name="app_name">anddd</string>
+
+    <string name="action_setting">Opcje</string>
+    <string name="select_specjalizacje">Wybierz specjalizacje</string>
+    <string-array name="Specjalizacje">
+
+        <item>Ginekolog</item>
+        <item>Pediatra</item>
+        <item>Rodzinny</item>
+    </string-array>
 </resources>

@@ -4,6 +4,9 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
 
     <application
         android:allowBackup="true"
@@ -23,6 +26,9 @@
         <activity android:name=".rejestracja" />
         <activity android:name=".Menu" />
         <activity android:name=".listaLekarzy" />
+        <activity android:name=".zarejestruj_wizyte" />
+        <activity android:name=".twoje_wizyty" />
+        <activity android:name=".lokalizacja"></activity>
     </application>
 
 </manifest>

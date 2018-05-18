@@ -97,10 +97,9 @@ public class rejestracja extends AppCompatActivity {
 
                          if (Connect == null) {
                               ConnectionResult = "Sprawdz polaczenie";
-                         } else {/*,'"+passwordstr+"',*/
+                         } else {
 
                             PreparedStatement query= Connect.prepareStatement("insert into uzytkownicy (Imie, Nazwisko, Miasto, Nr_Lokalu, Adres, Numer_Kontaktowy, Email, PESEL, Haslo) VALUES( '"+imiestr+"', '"+nazwiskostr+"','"+miastostr+"', '"+nrlokalustr+"',  '"+adresstr+"', '"+numerkonstr+"', '"+emailstr+"', '"+peselstr+"', '"+passwordstr+"' )");
-                              //Statement stmt = Connect.createStatement();
                               query.executeUpdate();
                               ConnectionResult = "Dodano do bazy";
 

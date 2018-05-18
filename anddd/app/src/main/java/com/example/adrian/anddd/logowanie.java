@@ -19,14 +19,11 @@ import java.sql.Statement;
 
 public class logowanie extends AppCompatActivity {
 
-
-
     Connection Connect;
     Button button;
     EditText ETpesel, ETpass;
-    String DBUserNameStr, DBPassword, db, ip, UserNamerStr, PasswordStr;
+    String UserNamerStr, PasswordStr;
     ProgressBar progressBar;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,10 +34,6 @@ public class logowanie extends AppCompatActivity {
         ETpass = findViewById(R.id.ehasloform);
         button = findViewById(R.id.bzalogujform);
         progressBar = findViewById(R.id.pprogress);
-
-
-        DBUserNameStr = "";
-        DBPassword = "";
 
         progressBar.setVisibility(View.GONE);
         button.setOnClickListener(new View.OnClickListener() {
@@ -55,7 +48,6 @@ public class logowanie extends AppCompatActivity {
             }
 
         });
-
     }
 
     @SuppressLint("StaticFieldLeak")
@@ -78,9 +70,7 @@ public class logowanie extends AppCompatActivity {
             {
                 Toast.makeText(logowanie.this, "Login Successfull", Toast.LENGTH_LONG).show();
                 finish();
-
             }
-
         }
 
         @Override
@@ -117,21 +107,14 @@ public class logowanie extends AppCompatActivity {
                             ConnectionResult = "Z tym nie przejdziesz";
                             isSuccess = false;
                         }
-
                     }
 
                 } catch (Exception ex) {
                     isSuccess = false;
                     ConnectionResult = ex.getMessage();
-
                 }
-
-
             }
-
-
             return ConnectionResult;
-
         }
     }
 }

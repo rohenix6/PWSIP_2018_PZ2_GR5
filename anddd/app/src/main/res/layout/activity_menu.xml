@@ -21,7 +21,7 @@
         android:layout_height="wrap_content"
         android:text="Zarejestruj wizytę" />
     <Button
-        android:id="@+id/bzarejestrowaneWizyty"
+        android:id="@+id/bTwojeWizyty"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Twoje wizyty" />

@@ -12,7 +12,6 @@ public class Menu extends AppCompatActivity {
     Button twojeWizyty;
     Button lokalizacja;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,35 +24,34 @@ public class Menu extends AppCompatActivity {
                 Intent i = new Intent(getApplicationContext(),listaLekarzy.class);
                 startActivity(i);
                 finish();
-
             }
         });
-       /*  zarejestrujWizyte= findViewById(R.id.bzarejestrowaneWizyty);
+        zarejestrujWizyte= findViewById(R.id.brejestracjaWizyty);
         zarejestrujWizyte.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(),zarejestrujWizyt.class);
+                Intent i = new Intent(getApplicationContext(),zarejestruj_wizyte.class);
                 startActivity(i);
                 finish();
             }
         });
-        twojeWizyty= findViewById(R.id.blogowanie);
+        twojeWizyty= findViewById(R.id.bTwojeWizyty);
         twojeWizyty.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(),twojeWizyt.class);
+                Intent i = new Intent(getApplicationContext(),twoje_wizyty.class);
                 startActivity(i);
                 finish();
             }
         });
-        lokalizacja = findViewById(R.id.blogowanie);
+        lokalizacja = findViewById(R.id.bLokalizacja);
         lokalizacja.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(),lokalizacj.class);
+                Intent i = new Intent(getApplicationContext(),lokalizacja.class);
                 startActivity(i);
                 finish();
             }
-        });*/
+        });
     }
 }

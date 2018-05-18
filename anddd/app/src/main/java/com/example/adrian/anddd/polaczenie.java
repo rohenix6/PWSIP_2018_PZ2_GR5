@@ -12,7 +12,7 @@ import java.sql.Statement;
 public class polaczenie
 {
     private final String dane ="jdbc:mysql://192.168.0.10:3306/and?useUnicode=yes&characterEncoding=utf-8";
-    private final String uzytkownik ="koot";
+    private final String uzytkownik ="sad";
     private final String haslo = "";
 
     @SuppressLint("NewApi")
