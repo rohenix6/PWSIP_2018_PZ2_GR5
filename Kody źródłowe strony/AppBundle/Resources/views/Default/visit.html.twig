@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Umów wizytę</h1>
+    {{ form_start(form) }}
+        {{ form_rest(form) }}
+        <div class="submit-wrap text-center">
+            <input type="submit" id="_submit" class="btn-default btn black" name="_submit" value="Wyślij" />
+        </div>
+    {{ form_end(form) }}
+{% endblock %}
+
+{% block javascripts %}
+<script>
+
+    $(document).ready(function() {
+        refreshTimes();
+
+        $('select.doctor-selector').change(function(){
+            refreshTimes();
+        });
+
+        $('.datepicker-jquery').change(function(){
+            refreshTimes();
+        });
+    });
+
+    var refreshTimes = function(){
+        var doctorId = $('select.doctor-selector').val();
+        var date = $('.datepicker-jquery').val();
+        var url = Routing.generate('doctor_visits', {'doctor': doctorId, 'date': date});
+        $("label.occupate").each(function(index, element){
+            $(this).removeClass("occupate");
+        });
+
+//        $("label").show();
+        $.ajax({
+            method: "POST",
+            url: Routing.generate('doctor_visits', {'doctor': doctorId, 'date': date}),
+            dataType: "json",
+            success: function(data) {
+                for(var i=0; i<data.length; i++){
+                    $("label:contains('" + data[i] + "')").addClass("occupate");
+                }
+            }
+        });
+    };
+</script>
+{% endblock %}

@@ -1,0 +1,125 @@
+.remove-visit{
+    position: absolute;
+    top:-5px;
+    right:0;
+}
+
+.hide-on-click{
+    display: none;
+}
+
+footer{
+    width: 100%;
+    background-color: darkgray;
+    color:white;
+    text-align: center;
+}
+
+#slides {
+    display:none;
+}
+
+#map-place {
+    height: 400px;
+    width: 100%;
+}
+
+.hour-visit .radio{
+    float: left;
+    margin: 10px;
+}
+.hour-visit label{
+    background-color: green;
+    padding-right: 20px;
+    color:white;
+    font-weight: bold ;
+}
+.hour-visit label.occupate{
+    background-color: brown;
+}
+
+.hour-visit label.active{
+    background-color: aqua;
+    color:black;
+}
+
+.hour-visit input{
+    display:none;
+}
+
+.visit{
+    position: relative;
+    width: 100%;
+    border: 2px solid deepskyblue;
+    padding: 10px;
+    margin: 10px;
+}
+
+.visit .doctor{
+    text-align: left;
+    font-weight: bold;
+}
+
+.visit .meet-date{
+    text-align: right;
+    float: right;
+}
+
+main .container{
+    width: auto !important;
+}
+
+.main-form{
+    margin: 10px;
+    /*text-align: center;*/
+    /*border: 1px solid black;*/
+    background-color: #add8e68f;
+    padding: 10px;
+    padding-bottom: 50px;
+}
+
+div.fc-scroller.fc-day-grid-container{
+    height:auto !important;
+}
+.fc-basic-view .fc-body .fc-row{
+    min-height: 1em !important;
+}
+.header{
+    text-align: center;
+    border: 1px solid black;
+    background-color: darkgrey;
+}
+
+.pictrue-box{
+    border-radius: 15px;
+    margin: 10px;
+    border: 1px solid black;
+}
+
+.pictrue-box a:first-child{
+    margin-top: 10px;
+}
+
+.right{
+    float: right;
+    text-align: right;
+}
+
+img.image{
+    /*width: 300px;*/
+    height: 300px;
+}
+
+.mySlides {
+    height: 400px;
+    width:100%;
+}
+
+.w3-left, .w3-right, .w3-badge {
+    cursor:pointer
+}
+.w3-badge {
+    height:13px;
+    width:13px;
+    padding:0
+}

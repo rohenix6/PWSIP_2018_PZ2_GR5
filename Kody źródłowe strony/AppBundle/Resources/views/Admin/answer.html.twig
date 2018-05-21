@@ -1,0 +1,22 @@
+{% extends '@EasyAdmin/default/layout.html.twig' %}
+
+{% block content_header %}
+    <h1>Answer</h1>
+{% endblock %}
+
+{% block main %}
+    <div>
+        <h3>Wiadomość od {{ message.user }} ({{ message.user.email }}) do {{ message.doctor }}</h3>
+        <p>{{ message.message }}</p>
+        <p>{{ message.date|date('h:i d-m-Y') }}</p>
+    </div>
+    <div>
+        <h2>Odpowiedz</h2>
+        {{ form_start(form) }}
+        {{ form_rest(form) }}
+        <div class="submit-wrap text-center">
+            <input type="submit" id="_submit" class="btn-default btn black" name="_submit" value="Wyślij" />
+        </div>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

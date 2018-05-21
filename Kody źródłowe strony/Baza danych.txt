@@ -1,0 +1,227 @@
+-- phpMyAdmin SQL Dump
+-- version 4.7.7
+-- https://www.phpmyadmin.net/
+--
+-- Host: rafalkaczmar.nazwa.pl:3306
+-- Czas generowania: 15 Maj 2018, 12:52
+-- Wersja serwera: 10.1.30-MariaDB
+-- Wersja PHP: 5.5.9-1ubuntu4.23
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+--
+-- Baza danych: `rafalkaczmar_Lekarz`
+--
+CREATE DATABASE IF NOT EXISTS `rafalkaczmar_Lekarz` DEFAULT CHARACTER SET latin2 COLLATE latin2_general_ci;
+USE `rafalkaczmar_Lekarz`;
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `doctor`
+--
+
+CREATE TABLE `doctor` (
+  `id` int(11) NOT NULL,
+  `firsName` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `lastName` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `active` tinyint(1) DEFAULT NULL,
+  `username` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Zrzut danych tabeli `doctor`
+--
+
+INSERT INTO `doctor` (`id`, `firsName`, `lastName`, `active`, `username`, `password`) VALUES
+(1, 'Pawe³', 'Nowak', 1, 'pnowak', 'cG5vd2Fr'),
+(2, 'Wies³aw', 'Wszywka', 1, 'wwszywka', 'd3dzenl3a2E='),
+(3, 'S³awek', 'Koex', 1, 'skoex', 'c2tvZXg='),
+(5, 'Adam', 'Nowak', 1, 'anowak', 'YW5vd2Fr');
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `meeting`
+--
+
+CREATE TABLE `meeting` (
+  `id` int(11) NOT NULL,
+  `startDate` datetime NOT NULL,
+  `doctor_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `details` longtext COLLATE utf8_unicode_ci,
+  `meetingResult` longtext COLLATE utf8_unicode_ci
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Zrzut danych tabeli `meeting`
+--
+
+INSERT INTO `meeting` (`id`, `startDate`, `doctor_id`, `user_id`, `details`, `meetingResult`) VALUES
+(26, '2018-05-11 12:30:00', 1, 4, 'Zobaczymy czy wszystko dzia³a.', NULL),
+(27, '2018-05-13 08:00:00', 1, 4, 'rfwefsdfsdfsdf', 'casdfasdasdasd'),
+(28, '2018-05-14 09:00:00', 5, 9, 'Testujemy.', 'ZObaczymy\ntest\ntest'),
+(30, '2018-05-14 09:00:00', 3, 10, 'Jest problem', NULL),
+(32, '2018-05-16 09:30:00', 3, 10, 'Jest problem', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `messages`
+--
+
+CREATE TABLE `messages` (
+  `id` int(11) NOT NULL,
+  `doctor_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `answer_id` int(11) DEFAULT NULL,
+  `date` datetime NOT NULL,
+  `message` longtext COLLATE utf8_unicode_ci
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Zrzut danych tabeli `messages`
+--
+
+INSERT INTO `messages` (`id`, `doctor_id`, `user_id`, `answer_id`, `date`, `message`) VALUES
+(1, 1, 9, NULL, '2018-05-14 21:21:03', 'Witam. Jest problem.'),
+(2, 1, 9, 1, '2018-05-14 21:22:07', 'Odpisuje Admin. Ok'),
+(3, 3, 10, NULL, '2018-05-14 21:57:47', 'ajajajaja'),
+(4, 3, 10, 3, '2018-05-14 21:58:02', '£atwo'),
+(5, 3, 10, NULL, '2018-05-14 22:00:14', 'Dziêkuje');
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `user`
+--
+
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL,
+  `username` varchar(180) COLLATE utf8_unicode_ci NOT NULL,
+  `username_canonical` varchar(180) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(180) COLLATE utf8_unicode_ci NOT NULL,
+  `email_canonical` varchar(180) COLLATE utf8_unicode_ci NOT NULL,
+  `enabled` tinyint(1) NOT NULL,
+  `salt` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `last_login` datetime DEFAULT NULL,
+  `confirmation_token` varchar(180) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `password_requested_at` datetime DEFAULT NULL,
+  `roles` longtext COLLATE utf8_unicode_ci NOT NULL COMMENT '(DC2Type:array)',
+  `pesel` varchar(11) COLLATE utf8_unicode_ci NOT NULL,
+  `city` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `phone` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `zip_code` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `address` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `about` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `province` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `birth_date` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Zrzut danych tabeli `user`
+--
+
+INSERT INTO `user` (`id`, `username`, `username_canonical`, `email`, `email_canonical`, `enabled`, `salt`, `password`, `last_login`, `confirmation_token`, `password_requested_at`, `roles`, `pesel`, `city`, `phone`, `zip_code`, `address`, `about`, `province`, `birth_date`) VALUES
+(4, 'Rafa³', 'rafa³', 'rafal11@spoko.pl', 'rafal11@spoko.pl', 1, NULL, '$2y$13$JLD5cEXxyKO2L8zS1pQVM.i8RqwV2e6KsYekMnJfjztgAq9DaX8H.', '2018-05-14 21:52:33', NULL, NULL, 'a:1:{i:0;s:10:\"ROLE_ADMIN\";}', '9608018888', 'Zalas', '123456789', '07-333', 'Zalas', 'Zadanie', 'Mazowieckie', '2018-03-22'),
+(6, 'Adam', 'adam', 'adam@op.pl', 'adam@op.pl', 1, NULL, '$2y$13$aez4MPVS.olXKrbs5Et5eu9TzhzuTWbBS6XJebXgMxLELDRYG/7Si', '2018-04-13 11:45:36', NULL, NULL, 'a:0:{}', '96969608815', 'Zalas', '554222111', '07-555', 'Zalas', 'Ból', 'Podkarpackie', '1999-04-14'),
+(9, 'rafal11', 'rafal11', 'rafal.kaczmarczyk96@gmail.com', 'rafal.kaczmarczyk96@gmail.com', 1, NULL, '$2y$13$wjVBoYDnwjPfSmH.PNjqMu/XRc7YX.lZ3vela7bTVpVYDPzQRhv8a', '2018-05-14 21:29:18', NULL, NULL, 'a:0:{}', '96080108815', '£om¿a', '323213123213', '04-333', 'Test', 'Siema', 'Zachodniopomorskie', '2002-05-15'),
+(10, 'BDSM', 'bdsm', 'rohenix6@o2.pl', 'rohenix6@o2.pl', 1, NULL, '$2y$13$zveDreLeuK/85ZVYaBmvj.2TVfeMuqdyfCQ82.Zw6eIpU3bVznfTW', '2018-05-14 21:54:22', NULL, NULL, 'a:0:{}', '95072912054', 'lomza', '513491023', '18-400', 'slowackiego', 'Ja byc makumba krol wioski', 'Podlaskie', '1995-07-28');
+
+--
+-- Indeksy dla zrzutów tabel
+--
+
+--
+-- Indeksy dla tabeli `doctor`
+--
+ALTER TABLE `doctor`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeksy dla tabeli `meeting`
+--
+ALTER TABLE `meeting`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `IDX_F515E13987F4FB17` (`doctor_id`),
+  ADD KEY `IDX_F515E139A76ED395` (`user_id`);
+
+--
+-- Indeksy dla tabeli `messages`
+--
+ALTER TABLE `messages`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `UNIQ_DB021E96AA334807` (`answer_id`),
+  ADD KEY `IDX_DB021E9687F4FB17` (`doctor_id`),
+  ADD KEY `IDX_DB021E96A76ED395` (`user_id`);
+
+--
+-- Indeksy dla tabeli `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `UNIQ_8D93D64992FC23A8` (`username_canonical`),
+  ADD UNIQUE KEY `UNIQ_8D93D649A0D96FBF` (`email_canonical`),
+  ADD UNIQUE KEY `UNIQ_8D93D649C05FB297` (`confirmation_token`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT dla tabeli `doctor`
+--
+ALTER TABLE `doctor`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT dla tabeli `meeting`
+--
+ALTER TABLE `meeting`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+
+--
+-- AUTO_INCREMENT dla tabeli `messages`
+--
+ALTER TABLE `messages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT dla tabeli `recepts`
+--
+ALTER TABLE `recepts`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT dla tabeli `user`
+--
+ALTER TABLE `user`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- Ograniczenia dla tabeli `meeting`
+--
+ALTER TABLE `meeting`
+  ADD CONSTRAINT `FK_F515E13987F4FB17` FOREIGN KEY (`doctor_id`) REFERENCES `doctor` (`id`),
+  ADD CONSTRAINT `FK_F515E139A76ED395` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`);
+
+--
+-- Ograniczenia dla tabeli `messages`
+--
+ALTER TABLE `messages`
+  ADD CONSTRAINT `FK_DB021E9687F4FB17` FOREIGN KEY (`doctor_id`) REFERENCES `doctor` (`id`),
+  ADD CONSTRAINT `FK_DB021E96A76ED395` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`),
+  ADD CONSTRAINT `FK_DB021E96AA334807` FOREIGN KEY (`answer_id`) REFERENCES `messages` (`id`);
+
+--
+-- Ograniczenia dla tabeli `recepts`
+--
+ALTER TABLE `recepts`
+  ADD CONSTRAINT `FK_BA667E1D603B1AB7` FOREIGN KEY (`umeeting_id`) REFERENCES `meeting` (`id`);
+COMMIT;

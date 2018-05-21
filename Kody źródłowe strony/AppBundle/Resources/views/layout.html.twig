@@ -1,0 +1,17 @@
+{% extends "::base.html.twig"%}
+{#{% form_theme form 'form/fields.html.twig' %}#}
+
+
+{% block title %}Demo Application{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <div class="spacer"></div>
+                {% block fos_user_content %}{% endblock %}
+                <div class="spacer"></div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

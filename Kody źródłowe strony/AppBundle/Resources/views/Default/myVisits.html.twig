@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h2>Moje Wizyty</h2>
+    {% for visit in visits %}
+        <div class="visit">
+            <object class="meet-date">
+                {{ visit.startDate|date('d-m-Y H:i') }}
+            </object>
+            <object class="doctor">
+                {{ visit.doctor }}</object>
+            <br/><div>
+                <a href="{{ path('remove_visit', {'id': visit.id}) }}">
+                    <button type="button" class="btn btn-default center-block" aria-label="Close">
+                        Rezygnuje z wizyty
+                    </button>
+                </a>
+            </div>
+
+
+
+        </div>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h2>Historia Wizyt</h2>
+    {% for visit in visits %}
+        <div class="visit">
+            <object class="doctor">
+                {{ visit.doctor }}</object>
+            <object class="meet-date">
+                    {{ visit.startDate|date('d-m-Y H:i') }}
+                </object>
+
+            <div class="hide-on-click" style="display:block;">
+                <a href="javascript:void(0)" class="show-hide">Pokaż szczegóły</a>
+            </div>
+            <div class="hide-on-click">
+                <a href="#" class="show-hide">Ukryj szczegóły</a><br/>
+                {% if visit.details %}
+                    <div>
+                        Co mi dolegało: {{ visit.details }}
+                    </div>
+                {% endif %}
+                {% if visit.meetingResult %}
+                    <div>
+                        Opinia lekarza: {{ visit.meetingResult }}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

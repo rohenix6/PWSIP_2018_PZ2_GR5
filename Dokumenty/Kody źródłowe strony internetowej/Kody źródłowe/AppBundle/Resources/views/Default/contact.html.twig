@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Dane Kontaktowe</h1>
+
+    <p style="margin-bottom: 0cm; line-height: 115%"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">Przychodnia
+                CENTRUM </font></font>
+    </p>
+    <p style="margin-bottom: 0cm; line-height: 115%"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">Medyczno-Diagnostyczne,
+            </font></font>
+    </p>
+    <p style="margin-bottom: 0cm; line-height: 115%"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">ul.
+                Miodowa 11a </font></font>
+    </p>
+    <p style="margin-bottom: 0cm; line-height: 115%"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">Łomża
+                04-654</font></font><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><br/>
+                tel. <a href="tel:383458499">38 3458499</a>, FAX 38 3455839</font></font></p>
+    <br/>
+    <div id="map-place"></div>
+    <h1>Kontakt</h1>
+    {{ form_start(form) }}
+    {{ form_rest(form) }}
+    <div class="submit-wrap text-center">
+        <input type="submit" id="_submit" class="btn-default btn black" name="_submit" value="Wyślij" />
+    </div>
+    {{ form_end(form) }}
+
+    {% if messages is not empty %}
+        <h1>Wiadomości</h1>
+        {% for message in messages %}
+            <div class="visit">
+                <object class="meet-date">
+                    {{ message.date|date('d-m-Y H:i') }}
+                </object>
+                <h4>Wiadomość do {{ message.doctor }}</h4>
+                <div>
+                    <p>
+                        {{ message.message }}
+                    </p>
+                </div>
+                {% if message.answer %}
+                    <h4>Odpowiedz</h4>
+                    <div>
+                        <p>
+                            {{ message.answer.message }}
+                        </p>
+                    </div>
+                {% endif %}
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endblock %}
+
+{% block javascripts %}
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDddIR2y51lT52rFWR4Id1TL4KAB4Jr_sg&callback=initMap">
+    </script>
+{% endblock %}

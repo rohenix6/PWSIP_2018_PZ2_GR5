@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        <p style="margin-bottom: 0.35cm; line-height: 115%"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">Zapraszamy
+                    do skorzystania z internetowej rejestracji do naszej przychodni. Mogą
+                    państwo rejestrować się przez 7 dni, 24 godziny na dobę.</font></font></p>
+        <p style="margin-top: 0.49cm; margin-bottom: 0.49cm; line-height: 100%">
+            <font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><b>Uwaga!</b></font></font><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">
+                    Rejestracja możliwa jest do Przychodni: </font></font>
+        </p>
+        <p style="margin-left: 0.5cm; margin-top: 0.49cm; margin-bottom: 0.49cm; line-height: 100%">
+            <font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">-
+                    Przychodnia CENTRUM Medyczno-Diagnostyczne, ul. Miodowa 11a Łomża
+                </font></font>
+        </p>
+        <p style="margin-left: 1.27cm; margin-top: 0.49cm; margin-bottom: 0.49cm; line-height: 100%">
+            <font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">Rejestracji
+                    można dokonać w przeddzień wizyty.</font></font></p>
+        <p style="margin-bottom: 0.35cm; line-height: 115%"><img src="{{ asset('bundles/app/image/Lekarz.jpg')}}" name="Obraz 20" align="bottom" hspace="1" width="383" height="239" border="0"/>
+        </p>
+    </div>
+    <div class="row">
+        <p style="margin-top: 0.49cm; margin-bottom: 0.49cm; line-height: 100%">
+            <font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><b>Gdy
+                        będą Państwo chcieli skorzystać z naszej rejestracji internetowej
+                        należy:</b></font></font></p>
+        <p style="margin-top: 0.49cm; margin-bottom: 0.49cm; line-height: 100%">
+            <font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">1.
+                    Zapoznać się z <font color="#365f91"><a href="{{ path('regulamin') }}">regulaminem</a>.</font></font></font></p>
+        <p style="margin-top: 0.49cm; margin-bottom: 0.49cm; line-height: 100%">
+            <font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">2.
+                    Kliknąć <font color="#365f91"><a href="{{ path('fos_user_registration_register') }}">Załóż
+                            konto</a>.</font></font></font></p>
+        <p style="margin-top: 0.49cm; margin-bottom: 0.49cm; line-height: 100%">
+            <font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">3.
+                    Po założeniu konta. Kliknij<font color="#244061"> </font><font color="#365f91"><a href="{{ path('fos_user_security_login') }}">Zaloguj</a></font>
+                    i podaj swój użytkownik i hasło.</font></font></p>
+        <p style="margin-top: 0.49cm; margin-bottom: 0.49cm; line-height: 100%">
+            <font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">4.
+                    Wybierz lekarza oraz godzinę.</font></font></p>
+        <p style="margin-top: 0.49cm; margin-bottom: 0.49cm; line-height: 100%">
+            <font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">5.
+                    Sprawdź swoje dane, ewentualnie uzupełnij.</font></font></p>
+        <p style="margin-top: 0.49cm; margin-bottom: 0.49cm; line-height: 100%">
+            <font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">6.
+                    Wyślij rejestrację klikając przycisk Zarejestruj.</font></font></p>
+        <p style="margin-bottom: 0.35cm; line-height: 115%"><br/>
+            <br/>
+
+        </p>
+        <p style="margin-bottom: 0.35cm; line-height: 115%"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">					Zapraszamy
+                    !!!</font></font></p>
+
+        <div id="map-place"></div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDddIR2y51lT52rFWR4Id1TL4KAB4Jr_sg&callback=initMap">
+    </script>
+{% endblock %}

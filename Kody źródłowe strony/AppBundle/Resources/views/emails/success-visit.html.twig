@@ -1,0 +1,4 @@
+Witaj {{ visit.user.username }} PESEL: {{ visit.user.pesel }}<br>
+Umówiłeś wizytę w Przychodni CENTRUM Medyczno-Diagnostyczne, ul. Miodowa 11a w Łomży 04-654 tel. 38 3458499, FAX 38 3455839 <br>u doktora {{ visit.doctor }} na dzień: {{ visit.startDate|date('d-m-y') }} o godzinie: {{ visit.startDate|date('h:i') }}.<br>
+Proszę przygotować wszystkie niezbędne dokumenty.<br>
+Życzymy udanej wizyty,
