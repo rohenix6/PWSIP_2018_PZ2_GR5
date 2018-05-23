@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".wizyta_rodzinny">
+
+    <Spinner
+        android:id="@+id/srpinerSpec"
+        android:layout_width="135dp"
+        android:layout_height="46dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/srTextVieww"
+        android:layout_marginEnd="50dp"
+        tools:layout_editor_absoluteX="210dp"
+        tools:layout_editor_absoluteY="27dp" />
+
+    <Spinner
+        android:id="@+id/srpinerLek"
+        android:layout_width="252dp"
+        android:layout_height="54dp"
+        android:layout_alignEnd="@+id/srpinerSpec"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="82dp"
+        tools:layout_editor_absoluteX="97dp"
+        tools:layout_editor_absoluteY="105dp" />
+
+    <TextView
+        android:id="@+id/srTextVieww"
+        android:layout_width="97dp"
+        android:layout_height="39dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="102dp"
+        android:layout_marginTop="28dp"
+        android:text="Specjalizacja"
+        app:layout_constraintEnd_toStartOf="@+id/spinerSpec"
+        tools:layout_editor_absoluteY="27dp" />
+
+    <TextView
+        android:id="@+id/srtextView2"
+        android:layout_width="68dp"
+        android:layout_height="30dp"
+        android:layout_alignTop="@+id/srpinerLek"
+        android:layout_toStartOf="@+id/srpinerLek"
+        android:text="Lekarz"
+        app:layout_constraintEnd_toStartOf="@+id/spinerLek"
+        tools:layout_editor_absoluteY="105dp" />
+
+    <Button
+        android:id="@+id/srbUmowWizyte"
+        android:layout_width="124dp"
+        android:layout_height="51dp"
+        android:layout_above="@+id/srbRezygnuj"
+        android:layout_centerHorizontal="true"
+        android:text="Umów Wizytę"
+        tools:layout_editor_absoluteX="143dp"
+        tools:layout_editor_absoluteY="514dp" />
+
+    <TextView
+        android:id="@+id/srKoncoweTextView"
+        android:layout_width="331dp"
+        android:layout_height="185dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="124dp"
+        android:text=""
+        app:layout_constraintBottom_toTopOf="@+id/bUmowWizyte"
+        tools:layout_editor_absoluteX="42dp" />
+
+    <Button
+        android:id="@+id/srbRezygnuj"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="13dp"
+        android:layout_marginEnd="16dp"
+        android:text="Rezygnuję"
+        tools:layout_editor_absoluteX="292dp"
+        tools:layout_editor_absoluteY="539dp" />
+
+    <Button
+        android:id="@+id/srbZmienSpec"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/srbUmowWizyte"
+        android:layout_marginStart="42dp"
+        android:text="Zmień Specjal"
+        tools:layout_editor_absoluteX="6dp"
+        tools:layout_editor_absoluteY="539dp" />
+
+</RelativeLayout>
